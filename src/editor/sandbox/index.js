@@ -6,6 +6,7 @@ import showDebugDirtyRect from '../../dep/showDebugDirtyRect?raw-minify';
 import setup from './setup?raw-minify';
 import { store } from '../../common/store';
 import { SCRIPT_URLS } from '../../common/config';
+import { fixEvalStr } from './fixEvalStr';
 
 function prepareSetupScript(isShared) {
   const isProd = process.env.NODE_ENV === 'production';
@@ -126,11 +127,16 @@ export function createSandbox(
     .replace(
       '__SCRIPTS__',
       scripts
-        .map((script) =>
-          script.content
+        .map((script, index) => {
+          // FIXME 目前实现比较trick —— 直接替换 js 字符串
+          if (index === 6) {
+            return `<script>${fixEvalStr}</script>`;
+          }
+
+          return script.content
             ? `<script>${script.content}</script>`
-            : `<script src="${script.src}"></script>`
-        )
+            : `<script src="${script.src}"></script>`;
+        })
         .join('')
     );
   sandbox.style.cssText = 'width:100%;height:100%;border:none;background:none';

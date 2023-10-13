@@ -101,7 +101,8 @@ module.exports = [
       vue: 'Vue'
     },
     plugins: [
-      new webpack.IgnorePlugin(/^fs$/),
+      // TODO 原项目中有这个插件，但是不知道为什么要这样做（加了的话，项目run时有问题）
+      // new webpack.IgnorePlugin(/^fs$/),
       new VueLoaderPlugin(),
       new MiniCssExtractPlugin({
         filename: '../css/example-bundle.css'
