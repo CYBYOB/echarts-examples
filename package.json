@@ -69,6 +69,7 @@
     "lz-string": "^1.4.4",
     "nanoid": "^4.0.0",
     "prettier": "^2.7.1",
+    "puppeteer": "^21.3.8",
     "resize-detector": "^0.3.0",
     "semver": "^7.5.2",
     "sucrase": "^3.24.0",

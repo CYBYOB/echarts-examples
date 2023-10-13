@@ -103,7 +103,9 @@ const heightOfJson = (json: StackTrace): number => {
   return recur(json);
 };
 
-const renderItem: CustomSeriesRenderItem = (
+// const renderItem: CustomSeriesanyRenderItem = (
+// FIXME 临时换成 any
+const renderItem: any = (
   params: CustomSeriesRenderItemParams,
   api: CustomSeriesRenderItemAPI
 ) => {

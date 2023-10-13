@@ -107,6 +107,17 @@ export default [
     "category": [
       "line"
     ],
+    "id": "line-simple-2",
+    "ts": true,
+    "tags": [],
+    "title": "Basic Line Chart 2",
+    "titleCN": "基础折线图",
+    "difficulty": 0
+  },
+  {
+    "category": [
+      "line"
+    ],
     "id": "line-smooth",
     "ts": true,
     "tags": [],

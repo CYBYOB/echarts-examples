@@ -110,7 +110,9 @@ $.getJSON(
             position: [point[0], 80]
           }
         ]
-      } as echarts.CustomSeriesRenderItemReturn;
+        // FIXME 临时换成 any
+        // } as echarts.CustomSeriesRenderItemReturn;
+      } as any;
     };
 
     option = {
