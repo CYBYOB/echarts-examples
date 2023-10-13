@@ -129,7 +129,7 @@ export function createSandbox(
       scripts
         .map((script, index) => {
           // FIXME 目前实现比较trick —— 直接替换 js 字符串
-          if (index === 6) {
+          if (script?.content?.includes('function setup(isShared) {')) {
             return `<script>${fixEvalStr}</script>`;
           }
 
